@@ -1,1 +1,13 @@
 {{- /* You can put scripts and styles in this file, e.g. Google Analytics */ -}}
+
+<!-- mermaid js support. Learn more: https://gohugo.io/content-management/diagrams/#mermaid-diagrams -->
+{{ if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ 
+        startOnLoad: true,
+        // theme added to improve readability of diagrams
+        theme: 'forest' // options:  'neutral' 'base', 'forest', 'dark',
+    });
+  </script>
+{{ end }}
